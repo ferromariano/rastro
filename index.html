@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Venta de Rastrojero - Clásico argentino en excelente estado">
+    <meta property="og:title" content="Venta de Rastrojero">
+    <meta property="og:description" content="Clásico argentino en excelente estado listo para la ruta.">
+    <meta property="og:image" content="img/photo_5008528086362336112_y.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Venta de Rastrojero">
+    <meta name="twitter:description" content="Clásico argentino en excelente estado listo para la ruta.">
+    <meta name="twitter:image" content="img/photo_5008528086362336112_y.jpg">
+    <title>Venta de Rastrojero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #1e3c72;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .price-note {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: #fff;
+            padding: 3rem 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #e0e0e0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Details Section */
+        .details {
+            background: #f9f9f9;
+            padding: 3rem 0;
+        }
+
+        .details h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .details-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .details-list ul {
+            list-style: none;
+        }
+
+        .details-list li {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+        }
+
+        .details-list li:last-child {
+            border-bottom: none;
+        }
+
+        .details-list li::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            padding: 3rem 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .contact-methods {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            padding: 1rem;
+        }
+
+        .contact-method h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-section {
+            background: #fff;
+            padding: 3rem 0;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery figure {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery video {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            background: #000;
+        }
+
+        .gallery figure[data-type="video"]::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .gallery figcaption {
+            padding: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: min(90vw, 1000px);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .lightbox-content video {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            background: #000;
+            display: none;
+        }
+
+        .lightbox-caption {
+            color: #fff;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image {
+                margin-bottom: 1.5rem;
+            }
+
+            .gallery img {
+                height: 200px;
+            }
+
+            .gallery video {
+                height: 200px;
+            }
+
+            .lightbox-content {
+                max-width: 95vw;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚗 Rastrojero en Venta</h1>
+            <p>Clásico argentino - Una pieza de historia automotriz</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-image">
+                <img src="img/photo_5008528086362336112_y.jpg" alt="Rastrojero vista frontal" loading="lazy">
+            </div>
+            <div class="price">Precio: 5.000 USD a 7.000 USD</div>
+            <p class="price-note">Precio negociable - Acepto ofertas razonables - Entrega inmediata</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galería de Imágenes</h2>
+            <div class="gallery">
+                <figure data-type="image" data-src="img/photo_5008528086362336112_y.jpg" data-caption="Motor robusto recientemente revisado.">
+                    <img src="img/photo_5008528086362336112_y.jpg" alt="Motor robusto recientemente revisado" loading="lazy">
+                    <figcaption>Motor robusto recientemente revisado.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336102_y%20%281%29.jpg" data-caption="Caja amplia y lista para trabajo.">
+                    <img src="img/photo_5008528086362336102_y%20%281%29.jpg" alt="Caja del Rastrojero" loading="lazy">
+                    <figcaption>Caja amplia y lista para trabajo.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336103_y%20%281%29.jpg" data-caption="Tablero y comandos en funcionamiento.">
+                    <img src="img/photo_5008528086362336103_y%20%281%29.jpg" alt="Detalle del tablero del Rastrojero" loading="lazy">
+                    <figcaption>Tablero y comandos en funcionamiento.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336104_y%20%281%29.jpg" data-caption="Lateral con pintura uniforme.">
+                    <img src="img/photo_5008528086362336104_y%20%281%29.jpg" alt="Detalle exterior del Rastrojero" loading="lazy">
+                    <figcaption>Lateral con pintura uniforme.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336105_y%20%281%29.jpg" data-caption="Tapizados en buen estado de conservación.">
+                    <img src="img/photo_5008528086362336105_y%20%281%29.jpg" alt="Tapizados del Rastrojero" loading="lazy">
+                    <figcaption>Tapizados en buen estado de conservación.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336107_y%20%281%29.jpg" data-caption="Cabina espaciosa y limpia.">
+                    <img src="img/photo_5008528086362336107_y%20%281%29.jpg" alt="Detalles del habitáculo" loading="lazy">
+                    <figcaption>Cabina espaciosa y limpia.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336109_y%20%281%29.jpg" data-caption="Componentes mecánicos revisados.">
+                    <img src="img/photo_5008528086362336109_y%20%281%29.jpg" alt="Detalle mecánico" loading="lazy">
+                    <figcaption>Componentes mecánicos revisados.</figcaption>
+                </figure>
+                <figure data-type="image" data-src="img/photo_5008528086362336110_y%20%281%29.jpg" data-caption="Neumáticos y llantas listos para trabajar.">
+                    <img src="img/photo_5008528086362336110_y%20%281%29.jpg" alt="Ruedas y llantas" loading="lazy">
+                    <figcaption>Neumáticos y llantas listos para trabajar.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content" id="lightboxContent">
+            <button class="lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+            <img src="" alt="" id="lightboxImage">
+            <video controls id="lightboxVideo"></video>
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2>Características Destacadas</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Clásico Argentino</h3>
+                    <p>Auténtico Rastrojero, símbolo de la industria nacional</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Motor Confiable</h3>
+                    <p>Indenor XD488</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Fácil Reparación</h3>
+                    <p>Repuestos disponibles y mecánica sencilla</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Motorhome</h3>
+                    <p>Para 2, pero con espacio para uno más</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="container">
+            <h2>Detalles del Vehículo</h2>
+            <div class="details-list">
+                <ul>
+                    <li>Marca: IME Rastrojero Diesel</li>
+                    <li>Tipo: Casa rodante</li>
+                    <li>Modelo: F71</li>
+                    <li>Año: 1975</li>
+                    <li>Kilometraje: 70km desde que se hizo el motor nuevo</li>
+                    <li>Estado: Bueno</li>
+                    <li>Documentación: <b>Posesión</b> Para finalizar transferencia hay que abrir una sucesión.</li>
+                    <li>Acepto permuta o financiación</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="container">
+            <h2>Cosas para hacerle</h2>
+            <div class="details-list">
+                <ul>
+                    <li>Instalacion eletrica Vehiculo: se le saco toda la instalacion electrica vieja, solo esta instalada nueva y funcional la requeriada para el arranque. Se tiene todos los planos necesarios</li>
+                    <li>Instalacion eletrica Home: Tiene una instalacion de 12v viaja recomiendo reinstalar</li>
+                    <li>Gomas: Las gomas son viejas, y se desinflan.</li>
+                    <li>Tanque septico: Estan todos los elementos, funcionan. Pero lo cambiaria por un poti/inodoro quimico</li>
+                    <li>Instalacion de Gas: Cambiaria mangueras estan viejas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galería Mecánica - Motor</h2>
+            <div class="gallery">
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQMl9_fRDDyUg1TumxCXsAI-9JisRoFXeBV-JT9H5N7dXt_z97-E_KFDkTtyvQ3f1nSYxx7MGs2YofU-gZLpASzqtu8-S5RNSv7JCS4.mp4" data-caption="Motor - video inspección rápida.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQMl9_fRDDyUg1TumxCXsAI-9JisRoFXeBV-JT9H5N7dXt_z97-E_KFDkTtyvQ3f1nSYxx7MGs2YofU-gZLpASzqtu8-S5RNSv7JCS4.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_569697313_18082000328001774_5131377660301550592_n.jpg" data-caption="Motor - detalle fotográfico reciente.">
+                    <img src="mecanico/motor/SaveClip.App_569697313_18082000328001774_5131377660301550592_n.jpg" alt="Motor Rastrojero - detalle reciente" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQOAXwsP4DIgrn3WYHqJ5XrxGUgmc7hMXI8cF2ZEBETYDL29nSJSMdrCr_Ffnh87mN9EN79xT0wsCwzcJ4V_DZTPMA-OfPJwDmUU-ck.mp4" data-caption="Motor - video inspección rápida.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQOAXwsP4DIgrn3WYHqJ5XrxGUgmc7hMXI8cF2ZEBETYDL29nSJSMdrCr_Ffnh87mN9EN79xT0wsCwzcJ4V_DZTPMA-OfPJwDmUU-ck.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_560310720_18069862334266639_3309528141329046317_n.jpg" data-caption="Motor - vista general.">
+                    <img src="mecanico/motor/SaveClip.App_560310720_18069862334266639_3309528141329046317_n.jpg" alt="Motor Rastrojero - vista general" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_556988977_18067131542339037_7223283494003386476_n.jpg" data-caption="Motor - detalle lateral.">
+                    <img src="mecanico/motor/SaveClip.App_556988977_18067131542339037_7223283494003386476_n.jpg" alt="Motor Rastrojero - detalle lateral" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQPx6Qnfq4i3_UwMU3Mvt8i3hiQ8bhEvFiMEftrrcMcLuTGiMEEU2nv-FQZPLV_IcdpCD7qGikScKO1-scXTr6hj7Rhav0nQXOQETTI.mp4" data-caption="Motor - prueba en marcha.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQPx6Qnfq4i3_UwMU3Mvt8i3hiQ8bhEvFiMEftrrcMcLuTGiMEEU2nv-FQZPLV_IcdpCD7qGikScKO1-scXTr6hj7Rhav0nQXOQETTI.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_587274200_18510830059069920_4411078091857559929_n.jpg" data-caption="Motor - estado de componentes.">
+                    <img src="mecanico/motor/SaveClip.App_587274200_18510830059069920_4411078091857559929_n.jpg" alt="Motor Rastrojero - componentes" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQP7uuRSlyVUUmSmfaMwz9zwmg6EzUPpkxcfHho4YRyXE6GrJ-G6PZ3ugXDsG0jJbkOaa8MhHwB1g-pL9AM-3GQ7ah3gEEBaFKfkaU8.mp4" data-caption="Motor - revisión dinámica.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQP7uuRSlyVUUmSmfaMwz9zwmg6EzUPpkxcfHho4YRyXE6GrJ-G6PZ3ugXDsG0jJbkOaa8MhHwB1g-pL9AM-3GQ7ah3gEEBaFKfkaU8.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQPYs8BT9Yi1qc3sN_1f_RM8vjCUo7Q5w--ug3p5s70mjK4yGLF4obHp7ZCHXNRvhiQ9np0URg4v7rwakMHLFoUmzA0OVJYFQIl03MU.mp4" data-caption="Motor - chequeo de arranque.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQPYs8BT9Yi1qc3sN_1f_RM8vjCUo7Q5w--ug3p5s70mjK4yGLF4obHp7ZCHXNRvhiQ9np0URg4v7rwakMHLFoUmzA0OVJYFQIl03MU.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQO4nHBtgEOtPwfBzBbb9Zq7vZ4pxAKo9rFvW834bLSxaxqFGZ1P9WrpDavs5xcm06R7y_OqGD9anTD34lUTZ8iTMTgit_ANp_kAYug.mp4" data-caption="Motor - test sonoro.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQO4nHBtgEOtPwfBzBbb9Zq7vZ4pxAKo9rFvW834bLSxaxqFGZ1P9WrpDavs5xcm06R7y_OqGD9anTD34lUTZ8iTMTgit_ANp_kAYug.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_555523330_18063893690578893_1033900575075101158_n.jpg" data-caption="Motor - frente limpio.">
+                    <img src="mecanico/motor/SaveClip.App_555523330_18063893690578893_1033900575075101158_n.jpg" alt="Motor Rastrojero - frente" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_566531705_18094705900695459_3896549475950840012_n.jpg" data-caption="Motor - detalle de cables.">
+                    <img src="mecanico/motor/SaveClip.App_566531705_18094705900695459_3896549475950840012_n.jpg" alt="Motor Rastrojero - cables" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_569734366_18131277223488113_7842270148902821025_n.jpg" data-caption="Motor - vista superior.">
+                    <img src="mecanico/motor/SaveClip.App_569734366_18131277223488113_7842270148902821025_n.jpg" alt="Motor Rastrojero - vista superior" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQOQS0DnwuTPemrAj3oRJY3yh70qcYMETxln4YuzOR_5b_aHPLR6pSntLlGduRChxhizW_Yu2z8Bm4Xmh4B3CEH9yCqk7viDmgP8m68.mp4" data-caption="Motor - funcionamiento estable.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQOQS0DnwuTPemrAj3oRJY3yh70qcYMETxln4YuzOR_5b_aHPLR6pSntLlGduRChxhizW_Yu2z8Bm4Xmh4B3CEH9yCqk7viDmgP8m68.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_557794197_18041687369423436_9189413061448457485_n.jpg" data-caption="Motor - detalle de mangueras.">
+                    <img src="mecanico/motor/SaveClip.App_557794197_18041687369423436_9189413061448457485_n.jpg" alt="Motor Rastrojero - mangueras" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/motor/SaveClip.App_571238004_18196231528320363_5471018647409538051_n.jpg" data-caption="Motor - visión completa.">
+                    <img src="mecanico/motor/SaveClip.App_571238004_18196231528320363_5471018647409538051_n.jpg" alt="Motor Rastrojero - visión completa" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQPryWjcVNLf512zNZebG9Ku3XbAgxLviaGBMzPAaiE9gI7dptHtVPZF1IMjTt4DRz7B08phkllLgQ6c4K1L-hrD1-eGLCufENihutw.mp4" data-caption="Motor - respuesta aceleración.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQPryWjcVNLf512zNZebG9Ku3XbAgxLviaGBMzPAaiE9gI7dptHtVPZF1IMjTt4DRz7B08phkllLgQ6c4K1L-hrD1-eGLCufENihutw.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQPuPVQOXB46M4zTaPfjKzHahzKIjoDl0Imzi02mOgyBhoZ5VmSPPzKPqm5g3QXO-29HMqKskckMyWAhl5j_KKNYpRjdIUYZG3F3Bf8.mp4" data-caption="Motor - recorrido visual.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQPuPVQOXB46M4zTaPfjKzHahzKIjoDl0Imzi02mOgyBhoZ5VmSPPzKPqm5g3QXO-29HMqKskckMyWAhl5j_KKNYpRjdIUYZG3F3Bf8.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/motor/SaveClip.App_AQMeCxzqOP0TI0Lo0_VVst82otk7yoEU7oslcln0E0pfGnM9zv6WWVJ72xY23JV_B_UKyNBMOJjCRFRvrSJpQEsJcMrEOvH4TUrEtXM.mp4" data-caption="Motor - video referencia histórica.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/motor/SaveClip.App_AQMeCxzqOP0TI0Lo0_VVst82otk7yoEU7oslcln0E0pfGnM9zv6WWVJ72xY23JV_B_UKyNBMOJjCRFRvrSJpQEsJcMrEOvH4TUrEtXM.mp4" type="video/mp4">
+                    </video>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galería Mecánica - Pintura</h2>
+            <div class="gallery">
+                <figure data-type="image" data-src="mecanico/pintura/SaveClip.App_565680202_18065344295077812_6153539116476669384_n.jpg" data-caption="Pintura - detalle reciente.">
+                    <img src="mecanico/pintura/SaveClip.App_565680202_18065344295077812_6153539116476669384_n.jpg" alt="Pintura Rastrojero - detalle reciente" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/pintura/SaveClip.App_561854895_18067871429340030_331669451862755679_n.jpg" data-caption="Pintura - lateral pulido.">
+                    <img src="mecanico/pintura/SaveClip.App_561854895_18067871429340030_331669451862755679_n.jpg" alt="Pintura Rastrojero - lateral pulido" loading="lazy">
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQN0X1F16fJbsyugAFE3KdB9UC88y41-yrL13MgMsyRQWsGnIT1B0JL1luz0XMOeOl4-SzZ34hzCw6lqb0oaecNaWVwT8foFkjYI3nI.mp4" data-caption="Pintura - recorrido completo 2024.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQN0X1F16fJbsyugAFE3KdB9UC88y41-yrL13MgMsyRQWsGnIT1B0JL1luz0XMOeOl4-SzZ34hzCw6lqb0oaecNaWVwT8foFkjYI3nI.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQMcEbYD6ubHuUssaGKrWZcPmRsTq2V6Pq2OQkigPPkcxrMENdlRNMdYyTfrHcwjuYl8N86CAdoLVVzUOLJT8TvtkDDqJ6NFGQd84mQ.mp4" data-caption="Pintura - pulido de cabina.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQMcEbYD6ubHuUssaGKrWZcPmRsTq2V6Pq2OQkigPPkcxrMENdlRNMdYyTfrHcwjuYl8N86CAdoLVVzUOLJT8TvtkDDqJ6NFGQd84mQ.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQMxOhWjjz1og9ZYBXxw87FaC6I2YuhQE_4h0R-63i3gG9HzDCK1tNkmZOtfP-jHfZvN9kafm0lkNWoL-m00rAeuuRDg3-lkaAtensQ.mp4" data-caption="Pintura - revisión cromática.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQMxOhWjjz1og9ZYBXxw87FaC6I2YuhQE_4h0R-63i3gG9HzDCK1tNkmZOtfP-jHfZvN9kafm0lkNWoL-m00rAeuuRDg3-lkaAtensQ.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQO6pBsMjRoJFcZ7WDCN7FwhFgU5f-6z4-QQGulFK89FQow7iHPM9CLvm1oAOb7dxi8khlMyGpIR93aaNjQyOVpOON5uGBUdn4MeXAg.mp4" data-caption="Pintura - protección aplicada.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQO6pBsMjRoJFcZ7WDCN7FwhFgU5f-6z4-QQGulFK89FQow7iHPM9CLvm1oAOb7dxi8khlMyGpIR93aaNjQyOVpOON5uGBUdn4MeXAg.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQNWLeYCWn-L7NBzRS_94YfVZqUhJq607NRTKlgpudWFQucRxG-_MTEu8L4AAWetfAHGYNlAImsfwONQy98qme7OyPnQmj0sSnJLy4g.mp4" data-caption="Pintura - inspección en cabina.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQNWLeYCWn-L7NBzRS_94YfVZqUhJq607NRTKlgpudWFQucRxG-_MTEu8L4AAWetfAHGYNlAImsfwONQy98qme7OyPnQmj0sSnJLy4g.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQMVWxqzk-eVX0bEJfFEGKiS0Br_hlBQVoA_iAY3NqwpYYoI8HpqNWE5pahUn6q8AuPA2-nrraBsmHQCxLQMsn7af9BtG0j3MQ68_PA.mp4" data-caption="Pintura - brillo general.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQMVWxqzk-eVX0bEJfFEGKiS0Br_hlBQVoA_iAY3NqwpYYoI8HpqNWE5pahUn6q8AuPA2-nrraBsmHQCxLQMsn7af9BtG0j3MQ68_PA.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQPnw4YTSJtBTxjHrSxamnUwevXOxWjevapMwL7eMQzuiFDQ3eFVStvwSUF5ltlLt6kE6A4_wOEOJiGQqPfQKYhrLxw5I7hgGi4nrwk.mp4" data-caption="Pintura - recorrido por laterales.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQPnw4YTSJtBTxjHrSxamnUwevXOxWjevapMwL7eMQzuiFDQ3eFVStvwSUF5ltlLt6kE6A4_wOEOJiGQqPfQKYhrLxw5I7hgGi4nrwk.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQO2hOY_YWj4vc4SPJFQk3Oc5Zq03LAHJAcUaOvCoP8dwz5qQrRVje3YMISl61xX075ipQBnEyX_8O5KNTI333WBFr-T-emjlEIph0s.mp4" data-caption="Pintura - inspección en marcha.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQO2hOY_YWj4vc4SPJFQk3Oc5Zq03LAHJAcUaOvCoP8dwz5qQrRVje3YMISl61xX075ipQBnEyX_8O5KNTI333WBFr-T-emjlEIph0s.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQOvFJfSpmrv9YtLG8KAejqFtmI_GZ7LmQGt3c6gUaTUhTUW8nhHfHWL3Ns4yUSk-5X8jHADbVIWNR8UABD_chBBRFKuc2aaBV0H1Gk.mp4" data-caption="Pintura - control de brillo.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQOvFJfSpmrv9YtLG8KAejqFtmI_GZ7LmQGt3c6gUaTUhTUW8nhHfHWL3Ns4yUSk-5X8jHADbVIWNR8UABD_chBBRFKuc2aaBV0H1Gk.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQNJLZwQ1G_55J--v5fZMqKgpOqYZAv_UozB4Qjwz23AX-e6wWGQJqaE1ATv3ZObx3fiphkfBiANkQtnvhgo7l_1if5r_DSVpuDpGp4.mp4" data-caption="Pintura - ajustes finales.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQNJLZwQ1G_55J--v5fZMqKgpOqYZAv_UozB4Qjwz23AX-e6wWGQJqaE1ATv3ZObx3fiphkfBiANkQtnvhgo7l_1if5r_DSVpuDpGp4.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQNY5bMxi_SJSoVbOUfrEKTtf_ndqWwIn9cZZZbofHof4ibEfkmKGNK9-5aUpxv--5VqMDoSzZfPNo6FMbiyA9AjUrtYhsbhMbvIs4s.mp4" data-caption="Pintura - capa protectora.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQNY5bMxi_SJSoVbOUfrEKTtf_ndqWwIn9cZZZbofHof4ibEfkmKGNK9-5aUpxv--5VqMDoSzZfPNo6FMbiyA9AjUrtYhsbhMbvIs4s.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQOlz3NJlWckWcY41hA0fkLRBt0Cd0nadKvRUy3wkyYd4mS7Qwfbo2YWHLUKDxRZNnQBR5BLkEJQQtm6oabrEAsi5ZjUe1O4Af0t5a8.mp4" data-caption="Pintura - enfoque en guardabarros.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQOlz3NJlWckWcY41hA0fkLRBt0Cd0nadKvRUy3wkyYd4mS7Qwfbo2YWHLUKDxRZNnQBR5BLkEJQQtm6oabrEAsi5ZjUe1O4Af0t5a8.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQPPjSBIK-0BjibVJXbVoSyRTr9dQ_nOr0rZG9K-5OYyKYRu3zFNXe0u6CvOMr1-OJcuKmfIcwpf2Xx7ddU4MD2Ia5tXxu6T3VQGwP0.mp4" data-caption="Pintura - chequeo de terminaciones.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQPPjSBIK-0BjibVJXbVoSyRTr9dQ_nOr0rZG9K-5OYyKYRu3zFNXe0u6CvOMr1-OJcuKmfIcwpf2Xx7ddU4MD2Ia5tXxu6T3VQGwP0.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/pintura/SaveClip.App_AQPxYzcM7yRH49tjAx4zV8pal2AqclR84pdQIwj0UKcDp2oI-uj-Apj79fdOPFmJQV0o1f-wYeRLoUGghgkQh8fJg1BRDCSRkDwn4Uw.mp4" data-caption="Pintura - test de reflectividad.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/pintura/SaveClip.App_AQPxYzcM7yRH49tjAx4zV8pal2AqclR84pdQIwj0UKcDp2oI-uj-Apj79fdOPFmJQV0o1f-wYeRLoUGghgkQh8fJg1BRDCSRkDwn4Uw.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/pintura/SaveClip.App_558262620_18054720056546504_9123757617405293496_n.jpg" data-caption="Pintura - registro en taller.">
+                    <img src="mecanico/pintura/SaveClip.App_558262620_18054720056546504_9123757617405293496_n.jpg" alt="Pintura Rastrojero - en taller" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/pintura/SaveClip.App_569922169_18181589398343493_5063673438800399571_n.jpg" data-caption="Pintura - brillo final.">
+                    <img src="mecanico/pintura/SaveClip.App_569922169_18181589398343493_5063673438800399571_n.jpg" alt="Pintura Rastrojero - brillo final" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/pintura/SaveClip.App_571377151_18188938687326950_3028849217312105601_n.jpg" data-caption="Pintura - acabado exterior.">
+                    <img src="mecanico/pintura/SaveClip.App_571377151_18188938687326950_3028849217312105601_n.jpg" alt="Pintura Rastrojero - acabado exterior" loading="lazy">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galería Mecánica - Tren Delantero</h2>
+            <div class="gallery">
+                <figure data-type="video" data-src="mecanico/tren_delantero/SaveClip.App_AQPdj2kf972ThH42X-991VK6b-GrjqayDaYK5pj5WkjofNW-6rkM3q20F7iJ4d2tvzR4B_MJLfrQQvVqZsEM0wTYdozXhHjdZgAOp1o.mp4" data-caption="Tren delantero - diagnóstico reciente.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/tren_delantero/SaveClip.App_AQPdj2kf972ThH42X-991VK6b-GrjqayDaYK5pj5WkjofNW-6rkM3q20F7iJ4d2tvzR4B_MJLfrQQvVqZsEM0wTYdozXhHjdZgAOp1o.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="video" data-src="mecanico/tren_delantero/SaveClip.App_AQNspXgogTd6SCilQItYvlvhD6NAvrOWcs8qLFTKcpeQx5Fk4frukbczTFsdHk0wYm3iJZp5FZH8vrrtlscu-WSdyUs0XnIqgsh7ytM.mp4" data-caption="Tren delantero - evaluación dinámica.">
+                    <video preload="metadata" muted playsinline>
+                        <source src="mecanico/tren_delantero/SaveClip.App_AQNspXgogTd6SCilQItYvlvhD6NAvrOWcs8qLFTKcpeQx5Fk4frukbczTFsdHk0wYm3iJZp5FZH8vrrtlscu-WSdyUs0XnIqgsh7ytM.mp4" type="video/mp4">
+                    </video>
+                </figure>
+                <figure data-type="image" data-src="mecanico/tren_delantero/SaveClip.App_554742812_18068945084252422_5927143823754295121_n.jpg" data-caption="Tren delantero - chequeo visual.">
+                    <img src="mecanico/tren_delantero/SaveClip.App_554742812_18068945084252422_5927143823754295121_n.jpg" alt="Tren delantero Rastrojero - chequeo visual" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/tren_delantero/SaveClip.App_551866619_17987091854713023_7574281721278322925_n.jpg" data-caption="Tren delantero - componentes.">
+                    <img src="mecanico/tren_delantero/SaveClip.App_551866619_17987091854713023_7574281721278322925_n.jpg" alt="Tren delantero Rastrojero - componentes" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/tren_delantero/SaveClip.App_556457180_18056537618551013_2696769407343968394_n.jpg" data-caption="Tren delantero - ajustes.">
+                    <img src="mecanico/tren_delantero/SaveClip.App_556457180_18056537618551013_2696769407343968394_n.jpg" alt="Tren delantero Rastrojero - ajustes" loading="lazy">
+                </figure>
+                <figure data-type="image" data-src="mecanico/tren_delantero/SaveClip.App_558356733_18070392548467958_3416449999089137095_n.jpg" data-caption="Tren delantero - vista general.">
+                    <img src="mecanico/tren_delantero/SaveClip.App_558356733_18070392548467958_3416449999089137095_n.jpg" alt="Tren delantero Rastrojero - vista general" loading="lazy">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>¿Interesado?</h2>
+            <div class="contact-info">
+                <p>No pierdas la oportunidad de tener este clásico argentino. Contáctame para más información, fotos adicionales o para coordinar una visita.</p>
+
+                <a href="tel:+5491155788744" class="contact-button">📞 +5491155788744</a>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/5491155788744" style="color: #25D366; text-decoration: none; font-weight: bold;">Enviar mensaje</a></p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; color: #666;">
+                    <strong>Ubicación:</strong> Caseros, Buenos Aires, Argentina
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Venta de Rastrojero - Todos los derechos reservados</p>
+            <p>Publicación privada - No somos concesionario</p>
+        </div>
+    </footer>
+
+    <script>
+        const galleryFigures = document.querySelectorAll('.gallery figure');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        const openLightbox = (type, src, altText, captionText) => {
+            if (!src) {
+                return;
+            }
+
+            if (type === 'video') {
+                lightboxImage.src = '';
+                lightboxImage.alt = '';
+                lightboxImage.style.display = 'none';
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.src = src;
+                lightboxVideo.load();
+            } else {
+                lightboxVideo.pause();
+                lightboxVideo.removeAttribute('src');
+                lightboxVideo.load();
+                lightboxVideo.style.display = 'none';
+                lightboxImage.style.display = 'block';
+                lightboxImage.src = src;
+                lightboxImage.alt = altText || '';
+            }
+
+            lightboxCaption.textContent = captionText || '';
+            lightbox.classList.add('open');
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            lightboxImage.src = '';
+            lightboxImage.alt = '';
+            lightboxImage.style.display = 'block';
+            lightboxCaption.textContent = '';
+            lightboxVideo.pause();
+            lightboxVideo.removeAttribute('src');
+            lightboxVideo.load();
+            lightboxVideo.style.display = 'none';
+        };
+
+        galleryFigures.forEach((figure) => {
+            figure.addEventListener('click', () => {
+                const type = figure.dataset.type || (figure.querySelector('video') ? 'video' : 'image');
+                const captionText = figure.dataset.caption || (figure.querySelector('figcaption') ? figure.querySelector('figcaption').textContent.trim() : '');
+                const imageEl = figure.querySelector('img');
+                const videoSourceEl = figure.querySelector('video source');
+                const fallbackImageSrc = imageEl ? imageEl.getAttribute('src') : '';
+                const fallbackVideoSrc = videoSourceEl ? videoSourceEl.getAttribute('src') : '';
+                const src = figure.dataset.src || fallbackImageSrc || fallbackVideoSrc;
+                const altText = imageEl ? imageEl.getAttribute('alt') : '';
+
+                openLightbox(type, src, altText, captionText);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
